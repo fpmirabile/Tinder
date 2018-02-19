@@ -29,12 +29,10 @@ class _Index extends Component {
   renderScene(route, navigator) {
     var {state,actions} = this.props;
     var routeId = route.id;
-    
-    this.props.setNavigator(navigator);
 
     if (routeId === 'home') {
       const HomePage = connect(Home.mapStateToProps, Home.mapDispatchToProps)(Home);
-      return <HomePage />
+      return <HomePage navigator={navigator}/>
     }
     if (routeId === 'messages') {
       return (

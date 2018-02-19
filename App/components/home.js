@@ -36,8 +36,7 @@ export default class Home extends Component {
   static mapStateToProps(state) {
     console.log(state);
     return {
-      cards: state.cards.data,
-      navigator: state.tinder.navigator
+      cards: state.cards.data
     }
   }
 
