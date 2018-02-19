@@ -144,59 +144,63 @@ export default class Messages extends Component {
   eachPic(x){
     return(
       <TouchableOpacity style={{alignItems:'center'}}>
-      <Image source = {x.image} style={{width:70, height:70, borderRadius:35, margin:10}} />
-      <Text style={{fontWeight:'600', color:'#444'}}>{x.first_name}</Text>
+        <Image source = {x.image} style={{width:70, height:70, borderRadius:35, margin:10}} />
+        <Text style={{fontWeight:'600', color:'#444'}}>{x.first_name}</Text>
       </TouchableOpacity>
-      )}
+    )
+  }
 
-    convoRender(x){
-      return(
-              <TouchableOpacity style={{alignItems:'center', flexDirection:'row', marginTop:5, marginBottom:5, borderBottomWidth:1, borderColor:'#e3e3e3'}}>
-              <Image source = {x.image} style={{width:70, height:70, borderRadius:35, margin:10}} />
-              <View>
-              <Text style={{fontWeight:'600', color:'#111'}}>{x.name}</Text>
-              <Text 
-              numberOfLines ={1}
-              style={{fontWeight:'400', color:'#888', width:200}}>{x.message}</Text>
-              </View>
-              </TouchableOpacity>)}
+  convoRender(x){
+    return(
+      <TouchableOpacity style={{alignItems:'center', flexDirection:'row', marginTop:5, marginBottom:5, borderBottomWidth:1, borderColor:'#e3e3e3'}}>
+        <Image source = {x.image} style={{width:70, height:70, borderRadius:35, margin:10}} />
+        <View>
+          <Text style={{fontWeight:'600', color:'#111'}}>{x.name}</Text>
+          <Text 
+            numberOfLines ={1}
+            style={{fontWeight:'400', color:'#888', width:200}}>
+            {x.message}
+          </Text>
+        </View>
+      </TouchableOpacity>
+    )
+  }
 
    
   render() {
     return (
       <View style = {{flex:1}}>
-      <Nav type = 'message' onPress = {() => this.props.navigator.replace({id:'home'})} />
-      <ScrollView style={styles.container}>
-      <TextInput 
-      style = {{height:50, }}
-      placeholder="Search"
-      />
-      <View style={styles.matches}>
-      <Text style = {{color:'#da533c', fontWeight:'600', fontSize:12}}>THIS PARTY'S BUZZING WITH BAD BITCHES</Text>
-      <ListView 
-      horizontal={true}
-      showsHorizontalScrollIndicator = {false}
-    dataSource={this.state.dataSource}
-    pageSize = {5}
-      renderRow={(rowData) =>this.eachPic(rowData)}
-      />
-      </View>
-      <View style = {{margin:10}}>
-      <Text style = {{color:'#da533c', fontWeight:'600', fontSize:12}}>MESSAGES</Text>
-      <ListView 
-      horizontal={false}
-      scrollEnabled = {false}
-      showsHorizontalScrollIndicator = {false}
-    dataSource={this.state.convoData}
-    pageSize = {5}
-      renderRow={(rowData) =>this.convoRender(rowData)}
-      />
-      </View>
-     
+        <Nav type = 'message' onPress = {() => this.props.navigator.replace({id:'home'})} />
+        <ScrollView style={styles.container}>
+          <TextInput 
+          style = {{height:50, }}
+          placeholder="Search"
+          />
+          <View style={styles.matches}>
+            <Text style = {{color:'#da533c', fontWeight:'600', fontSize:12}}>THIS PARTY'S BUZZING WITH BAD BITCHES</Text>
+            <ListView 
+              horizontal={true}
+              showsHorizontalScrollIndicator = {false}
+              dataSource={this.state.dataSource}
+              pageSize = {5}
+              renderRow={(rowData) =>this.eachPic(rowData)}
+            />
+          </View>
+          <View style = {{margin:10}}>
+            <Text style = {{color:'#da533c', fontWeight:'600', fontSize:12}}>MESSAGES</Text>
+            <ListView 
+              horizontal={false}
+              scrollEnabled = {false}
+              showsHorizontalScrollIndicator = {false}
+              dataSource={this.state.convoData}
+              pageSize = {5}
+              renderRow={(rowData) =>this.convoRender(rowData)}
+            />
+          </View>
         </ScrollView>
-        </View>
+      </View>
     )
-}
+  }
 }
 //onPress = {() => this.renderNope()} 
 

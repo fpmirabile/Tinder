@@ -24,9 +24,9 @@ export default class Index extends Component {
     return (
       <View
        style={{flex:1}}>
-      <Provider store={store}>
-        <Components/>
-      </Provider>
+        <Provider store={store}>
+          <Components/>
+        </Provider>
       </View>);
   }
 }

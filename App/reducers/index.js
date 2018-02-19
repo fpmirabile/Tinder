@@ -7,19 +7,15 @@ const initialState = {
   userDeets: {
   	email:"s.okoro07@gmail.com",
 
-}
+  }
 }
 
 export function tinder(state = initialState, action = {}) {
-    switch(action.type){
-   case types.LOGIN:
+  switch(action.type){
+    case types.LOGIN:
+      return {...state, };
 
-return {...state, };
-
-
-
-default:
-return state;
-
-}
+    default:
+      return state;
+  }
 }

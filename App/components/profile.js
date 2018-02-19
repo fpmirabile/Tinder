@@ -31,70 +31,66 @@ export default class Profile extends Component {
     
   }
 
-
-
-
   render() {
     return (
       <View style={{flex:1}}>
-      <Nav  type = "profile" onPress = {() => this.props.navigator.replace({id:'home'})} />
-      <ScrollView style={styles.container}>
-      <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:350, width:width}} />
-       <View style={[styles.row, {marginTop:15}]}>
-       <Text style = {{fontSize:19, fontWeight:'400'}}>Samuel, </Text><Text style={{fontSize:21, fontWeight:'300', marginBottom:-2}}>23</Text>
-       </View>
-       <View style={styles.row}>
-       <Text style={{color:'#444', fontSize:15}}>Unappers Creative</Text>
-       </View>
-       <View style={styles.row}>
-       <Text style={{color:'#777', fontSize:11}}>less than a mile away</Text>
-       </View>
-       <View style={styles.description}>
-       <Text style={{color:'#555'}}>We hook up, you do my laundry, I promise to call you but never really.</Text>
-       </View>
-       <View style ={styles.commons}>
-       <Text style = {styles.title}>
-      {this.state.friends} for Common Connections
-       </Text>
-       <Text style={{marginTop:10, fontSize:14, color:'#666', fontWeight:"400"}}>We compare your Facebook friends with those of your matches to display any common connections</Text>
-       </View>
-       <View style ={styles.commons}>
-       <Text style = {styles.title}>
-      Instagram Photos
-       </Text>
-       <ScrollView
-       horizontal = {true}
-       >
-       <View style ={{}}>
-             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
-             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
-       </View>
-       <View style ={{}}>
-             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
-             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
-       </View>
-       <View style ={{}}>
-             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
-             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
-       </View>
-       <View style ={{}}>
-             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
-             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
-       </View>
-       <View style ={{}}>
-             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
-             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
-       </View>
-       <View style ={{}}>
-             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
-             <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
-       </View>
-       </ScrollView>
-       </View>
+        <Nav  type = "profile" onPress = {() => this.props.navigator.replace({id:'home'})} />
+        <ScrollView style={styles.container}>
+          <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:350, width:width}} />
+          <View style={[styles.row, {marginTop:15}]}>
+            <Text style = {{fontSize:19, fontWeight:'400'}}>Samuel, </Text><Text style={{fontSize:21, fontWeight:'300', marginBottom:-2}}>23</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={{color:'#444', fontSize:15}}>Unappers Creative</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={{color:'#777', fontSize:11}}>less than a mile away</Text>
+          </View>
+          <View style={styles.description}>
+            <Text style={{color:'#555'}}>We hook up, you do my laundry, I promise to call you but never really.</Text>
+          </View>
+          <View style ={styles.commons}>
+            <Text style = {styles.title}>
+              {this.state.friends} for Common Connections
+            </Text>
+            <Text style={{marginTop:10, fontSize:14, color:'#666', fontWeight:"400"}}>We compare your Facebook friends with those of your matches to display any common connections</Text>
+          </View>
+          <View style ={styles.commons}>
+          <Text style = {styles.title}>
+          Instagram Photos
+          </Text>
+          <ScrollView
+            horizontal = {true}>
+            <View style ={{}}>
+              <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+              <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+            </View>
+            <View style ={{}}>
+              <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+              <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+            </View>
+            <View style ={{}}>
+              <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+              <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+            </View>
+            <View style ={{}}>
+              <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+              <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+            </View>
+            <View style ={{}}>
+              <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+              <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+            </View>
+            <View style ={{}}>
+              <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+              <Image source ={require('../images/profile.jpg')} resizeMode="stretch" style={{height:100, width:100, margin:5}} />
+            </View>
+            </ScrollView>
+            </View>
         </ScrollView>
-        </View>
+      </View>
     )
-}
+  }
 }
 //onPress = {() => this.renderNope()} 
 
