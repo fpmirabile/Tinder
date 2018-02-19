@@ -17,15 +17,34 @@ import Nav from './global-widgets/nav'
 import SwipeCards from 'react-native-swipe-cards';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Iconz from 'react-native-vector-icons/Ionicons';
-import { Cards } from '../mocks';
+
+import { getCards } from '../actions';
 
 export default class Home extends Component {
   constructor(props){
     super(props)
-    this.state = {
-      cards: Cards
+  }
+
+
+  static mapDispatchToProps(distpach) {
+    return {
+      getCards: function() {
+        distpach(getCards())
+      }
     }
   }
+  static mapStateToProps(state) {
+    console.log(state);
+    return {
+      cards: state.cards.data,
+      navigator: state.tinder.navigator
+    }
+  }
+
+  componentDidMount() {
+    this.props.getCards();
+  }
+
   Card(x){
     return (
       <View style={styles.card}>
@@ -43,7 +62,8 @@ export default class Home extends Component {
       </View>
     )
   }
-    handleYup (card) {
+    
+  handleYup (card) {
     console.log(`Yup for ${card.text}`)
   }
 
@@ -60,11 +80,13 @@ export default class Home extends Component {
 
   yup(){
     console.log(this.refs['swiper'])
-this.refs['swiper']._goToNextCard()  }
+    this.refs['swiper']._goToNextCard()  
+  }
 
-nope(){
+  nope(){
     console.log(this.refs['swiper'])
-this.refs['swiper']._goToNextCard()  }
+    this.refs['swiper']._goToNextCard()
+  }
 
   render() {
     return (
@@ -72,7 +94,7 @@ this.refs['swiper']._goToNextCard()  }
            <Nav chat = {() => this.props.navigator.replace({id: "messages"})} toProfile = {() => this.props.navigator.replace({id:'profile'})} />
         <SwipeCards
           ref = {'swiper'}
-          cards={this.state.cards}
+          cards={this.props.cards}
           containerStyle = {{  backgroundColor: '#f7f7f7', alignItems:'center', margin:20}}
           renderCard={(cardData) => this.Card(cardData)}
           renderNoMoreCards={() => this.noMore()}

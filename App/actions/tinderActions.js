@@ -9,3 +9,10 @@ export function login(navProps, res) {
     data: res
   };
 }
+
+export function setNavigator(nav) {
+  return {
+    type: types.SET_NAVIGATOR,
+    payload: nav
+  };
+}
