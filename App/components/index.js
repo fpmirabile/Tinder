@@ -35,20 +35,13 @@ class _Index extends Component {
       return <HomePage navigator={navigator}/>
     }
     if (routeId === 'messages') {
-      return (
-        <Messages
-          {...this.props} 
-          userData ={route.userData}
-          navigator={navigator} />
-        );
+      const MessagesPage = connect(Messages.mapStateToProps, Messages.mapDispatchToProps)(Messages);
+      return <MessagesPage navigator={navigator}/>
+
     }
     if (routeId === 'profile') {
-      return (
-        <Profile
-          {...this.props} 
-          userData ={route.userData}
-          navigator={navigator} />
-        );
+      const ProfilePage = connect(Profile.mapStateToProps, Profile.mapDispatchToProps)(Profile);
+      return <ProfilePage navigator={navigator}/>
     }
   }
 
